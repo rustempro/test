@@ -3,13 +3,15 @@ import { useState } from "react";
 const getTimeFromDate = (date) => date.toISOString().substring(11, 19);
 
 export const MyComponent = () => {
-  const [currentDate, setCurrentDate] = useState(new Date());
+  const [obj, setObj] = useState({ a: 10, b: 15, c: 30 });
 
-  setTimeout(() => {
-    setCurrentDate(new Date());
-  }, 1000);
+  // obj.a =20 // это иммутабельность
 
-  return <div>{getTimeFromDate()}</div>;
+  if (obj.c === 30) {
+    setObj({ ...obj, c: 50 });
+  }
+
+  return <div>{obj.c}</div>;
 };
 
 // const getValue = () => 123;
