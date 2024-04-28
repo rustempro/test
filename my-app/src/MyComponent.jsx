@@ -9,7 +9,7 @@ export const MyComponent = () => {
     setCurrentDate(new Date());
   }, 1000);
 
-  return <div>{getTimeFromDate()}</div>;
+  return <div>{getTimeFromDate(currentDate)}</div>;
 };
 
 // const getValue = () => 123;
